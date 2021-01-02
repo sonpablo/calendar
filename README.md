@@ -8,7 +8,7 @@ This simple calendar allows you to create Events in days and manage they.
 
 ## How to run
 
-1. Clone repositorie
-2. Run `npm install`
-3. Run `npm start`.
+1. Clone repository
+2. Run `npm install` command.
+3. Run `npm start` command.
 4. Enjoy! ;)
