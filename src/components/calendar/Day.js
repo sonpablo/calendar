@@ -1,8 +1,8 @@
-import CalendarEvent from 'components/CalendarEvent'
+import Event from 'components/calendar/Event'
 import React, { useState } from 'react'
-import './CalendarDay.css'
+import './Day.css'
 
-export default function CalendarDay({ dayNumber, isFirstDay, startOn = 0 }) {
+export default function Day({ dayNumber, isFirstDay, startOn = 0 }) {
 
     const [showModal, setShowModal] = useState(false)
 
@@ -27,7 +27,7 @@ export default function CalendarDay({ dayNumber, isFirstDay, startOn = 0 }) {
                 <p className="days-events" onClick={hanldeOpenModal} >PR</p>
 
             </div>
-            <CalendarEvent handleClose={handleCloseModal} show={showModal} />
+            <Event handleClose={handleCloseModal} show={showModal} />
         </li>
     )
 }

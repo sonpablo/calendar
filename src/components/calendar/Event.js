@@ -1,7 +1,7 @@
 import React from 'react'
-import './CalendarEvent.css'
+import './Event.css'
 
-export default function CalendarEvent({ handleClose, show }) {
+export default function Event({ handleClose, show }) {
 
     const showHideClassName = show ? 'modal display-block' : 'modal display-none'
 

@@ -1,7 +1,7 @@
 import React from 'react'
-import './CalendarHeader.css'
+import './Header.css'
 
-export default function CalendarHeader({ month, year }) {
+export default function Header({ month, year }) {
 
     const title = `${month} ${year}`
     return (
