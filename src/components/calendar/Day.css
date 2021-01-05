@@ -1,9 +1,8 @@
 li {
+  background-color: #fff;
+  padding: 0.5em;
+  text-align: right;
   cursor: pointer;
-}
-.calendar-days-container {
-  display: flex;
-  flex-direction: column;
 }
 .day-number {
   margin: 0.2em;
@@ -11,6 +10,7 @@ li {
 }
 .current-day {
   font-weight: bold;
+  text-decoration: underline;
 }
 .first-day {
   grid-column-start: var(--first-day-start, 0);

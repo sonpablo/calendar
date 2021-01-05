@@ -1,10 +1,10 @@
-ol {
-  display: grid;
-  grid-gap: 0.1em;
+.list-days-name {
+  display: grid;  
   grid-template-columns: repeat(7, 1fr);
   list-style: none;
   margin: 0;
   padding: 0;
+ 
 }
 .weekday {
   background-color: #eee;

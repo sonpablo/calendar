@@ -1,9 +1,11 @@
 import Calendar from 'pages/Calendar';
-
+import { CalendarContext } from 'context/CalendarContext'
 function App() {
 
     return (
-        <Calendar />
+        <CalendarContext>
+            <Calendar />
+        </CalendarContext>
     );
 }
 

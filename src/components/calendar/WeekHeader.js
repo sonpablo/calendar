@@ -18,7 +18,7 @@ export default function WeekHeader() {
         })
     }
     return (
-        <ol>
+        <ol className="list-days-name">
             {getWeekDays()}
         </ol>
     )
