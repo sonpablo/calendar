@@ -6,6 +6,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
 }
+
 .modal .modal-main {
     position: fixed;
     background: #fff;
@@ -15,9 +16,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .display-block {
     display: block;
 }
+
 .display-none {
     display: none;
 }

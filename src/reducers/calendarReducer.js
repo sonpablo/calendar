@@ -21,8 +21,8 @@ export const calendarReducer = (state, action) => {
                 currentYear: dateCurrentYear,
                 selectedMonth: dateCurrentMonthNumber,
                 selectedYear: dateCurrentYear
-
             }
+
         case 'NEXT_MONTH':
             if (state.month === 12) {
                 month = 1
@@ -38,7 +38,6 @@ export const calendarReducer = (state, action) => {
                 currentYear: dateCurrentYear,
                 selectedMonth: month,
                 selectedYear: year
-
             }
 
         case 'PREVIOUS_MONTH':
@@ -58,9 +57,9 @@ export const calendarReducer = (state, action) => {
                 selectedYear: year
 
             }
+
         default:
             return state
-
     }
 }
 
@@ -79,6 +78,4 @@ function getCalendarInformation(year) {
     })
 
     return calendarInformation
-
 }
-

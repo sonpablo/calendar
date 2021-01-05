@@ -17,6 +17,7 @@ export default function WeekHeader() {
             return <li className="weekday" key={dayIndex}>{dayIndex}</li>
         })
     }
+
     return (
         <ol className="list-days-name">
             {getWeekDays()}
