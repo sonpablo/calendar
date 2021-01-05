@@ -4,23 +4,28 @@ li {
   text-align: right;
   cursor: pointer;
 }
+
 .day-number {
   margin: 0.2em;
   text-align: right;
 }
+
 .current-day {
   font-weight: bold;
   text-decoration: underline;
 }
+
 .first-day {
   grid-column-start: var(--first-day-start, 0);
 }
+
 .days-events-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
   margin-top: 1em;
 }
+
 .days-events {
   background-color: lightseagreen;
   border-radius: 20%;

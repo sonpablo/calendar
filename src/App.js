@@ -1,7 +1,7 @@
 import Calendar from 'pages/Calendar';
 import { CalendarContext } from 'context/CalendarContext'
-function App() {
 
+function App() {
     return (
         <CalendarContext>
             <Calendar />

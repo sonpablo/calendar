@@ -1,6 +1,7 @@
 .month-container {
   background-color: #fafafa;
 }
+
 .list-days {
   display: grid;
   gap: 0.1em;

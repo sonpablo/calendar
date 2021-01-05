@@ -14,11 +14,14 @@ export function CalendarContext({ children }) {
         selectedYear: 0
     })
 
-    return <Context.Provider value={{
-        calendar,
-        dispatch
-    }}>
-        {children}
-    </Context.Provider>
+    return (
+        <Context.Provider value={{
+            calendar,
+            dispatch
+        }}>
+            {children}
+        </Context.Provider>
+    )
 }
+
 export default Context

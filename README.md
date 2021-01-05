@@ -4,9 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Description
 
-This simple calendar allows you to create Events in days and manage they.
+This simple calendar allows you to create and manage Events on dates.
 
 ## I have used
+
 * Context api
 * Reducer api
 * Custom hooks
