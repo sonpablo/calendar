@@ -1,7 +1,7 @@
-import WeekHeader from 'components/calendar/WeekHeader'
 import Day from 'components/calendar/Day'
-import React from 'react'
+import WeekHeader from 'components/calendar/WeekHeader'
 import useCalendar from 'hooks/useCalendar'
+import React from 'react'
 import './Month.css'
 
 export default function Month({ currentDay }) {

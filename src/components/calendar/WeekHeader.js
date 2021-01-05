@@ -1,5 +1,5 @@
-import React from 'react'
-import './WeekHeader.css'
+import React from 'react';
+import './WeekHeader.css';
 
 const weekDays = new Array(7);
 weekDays[0] = "Sunday";

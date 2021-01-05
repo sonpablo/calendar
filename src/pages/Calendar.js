@@ -1,6 +1,6 @@
 import Header from 'components/calendar/Header';
 import Month from 'components/calendar/Month';
-import useCalendar from 'hooks/useCalendar'
+import useCalendar from 'hooks/useCalendar';
 import React, { useEffect } from 'react';
 
 export default function Calendar() {

@@ -1,12 +1,10 @@
+import { CalendarContext } from 'context/CalendarContext';
 import Calendar from 'pages/Calendar';
-import { CalendarContext } from 'context/CalendarContext'
 
-function App() {
+export default function App() {
     return (
         <CalendarContext>
             <Calendar />
         </CalendarContext>
     );
 }
-
-export default App;

@@ -1,6 +1,6 @@
+import useCalendar from 'hooks/useCalendar';
 import React from 'react';
-import './Header.css'
-import useCalendar from 'hooks/useCalendar'
+import './Header.css';
 
 export default function Header() {
 
