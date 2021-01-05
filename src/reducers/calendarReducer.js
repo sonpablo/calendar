@@ -11,7 +11,7 @@ const months = [...Array(12).keys()]
 export const calendarReducer = (state, action) => {
     let month = state.selectedMonth
     let year = state.selectedYear
-    debugger
+    
     switch (action.type) {
         case 'INIT':
             return {
@@ -22,15 +22,13 @@ export const calendarReducer = (state, action) => {
                 selectedMonth: dateCurrentMonthNumber,
                 selectedYear: dateCurrentYear
             }
-
         case 'NEXT_MONTH':
-            if (state.month === 12) {
+            if (state.selectedMonth === 12) {
                 month = 1
                 year = state.selectedYear + 1
             } else {
                 month = state.selectedMonth + 1
             }
-
             return {
                 info: getCalendarInformation(year),
                 currentDay: dateCurrentDayNumber,
@@ -39,9 +37,8 @@ export const calendarReducer = (state, action) => {
                 selectedMonth: month,
                 selectedYear: year
             }
-
         case 'PREVIOUS_MONTH':
-            if (state.month === 1) {
+            if (state.selectedMonth === 1) {
                 month = 12
                 year = state.selectedYear - 1
             } else {
@@ -57,7 +54,6 @@ export const calendarReducer = (state, action) => {
                 selectedYear: year
 
             }
-
         default:
             return state
     }

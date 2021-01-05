@@ -7,31 +7,26 @@ import './Month.css'
 export default function Month({ currentDay }) {
     const { calendar } = useCalendar()
 
-    if (calendar.currentDay === 0)
-        return <></>
+    if (calendar.currentDay === 0) return <></>
 
     const getMonthDays = (month) => {
+
         const days = [...Array(calendar.info[month - 1].daysOfMonth).keys()]
         const startsOn = calendar.info[month - 1].startsOn + 1
+        const isCurrentDate = calendar.selectedYear === calendar.currentYear
+            && calendar.selectedMonth === calendar.currentMonth
 
         return days.map(day => {
             const dayNumber = day + 1;
 
-            let dayProps = {
-                currentDay: calendar.currentDay,
-                dayNumber,
-                key: dayNumber
-            }
-
-            if (day === 0) {
-                dayProps.isFirstDay = true
-                dayProps.startsOn = startsOn
-            }
-
             return (
-                <Day {...dayProps}>
-                    {dayNumber}
-                </Day>
+                <Day currentDay={calendar.currentDay}
+                    dayNumber={dayNumber}
+                    isCurrentDate={isCurrentDate}
+                    isFirstDay={dayNumber === 1}
+                    key={day}
+                    startsOn={startsOn}
+                />
             )
         })
     }

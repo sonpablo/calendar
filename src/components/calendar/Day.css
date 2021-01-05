@@ -1,8 +1,12 @@
-li {
+.day-item {
   background-color: #fff;
   padding: 0.5em;
   text-align: right;
-  cursor: pointer;
+}
+
+.day-item:hover {
+  box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05),
+    0 2px 3px 0 rgba(63, 63, 68, 0.15);
 }
 
 .day-number {
@@ -29,7 +33,7 @@ li {
 .days-events {
   background-color: lightseagreen;
   border-radius: 20%;
-  cursor: help;
+  cursor: pointer;
   display: inline;
   font-size: 0.7em;
   margin: 0.2em;

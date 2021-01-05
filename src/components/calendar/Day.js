@@ -2,15 +2,17 @@ import Event from 'components/calendar/Event'
 import React, { useState } from 'react'
 import './Day.css'
 
-export default function Day({ currentDay, dayNumber, isFirstDay = false, startsOn = 0 }) {
+export default function Day({ currentDay, dayNumber, isCurrentDate = false, isFirstDay = false, startsOn = 0 }) {
 
     const [showModal, setShowModal] = useState(false)
 
     const styleFirstDayStart = { "--first-day-start": startsOn }
 
-    const classNameFirstDay = isFirstDay ? 'first-day' : ''
+    const classNameFirstDay = isFirstDay ? 'day-item first-day' : 'day-item'
 
-    const classNameDayNumber = currentDay === dayNumber ? "day-number current-day" : "day-number"
+    const classNameDayNumber = currentDay === dayNumber && isCurrentDate
+        ? "day-number current-day"
+        : "day-number"
 
     const hanldeOpenModal = () => {
         setShowModal(true)
