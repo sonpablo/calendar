@@ -13,17 +13,15 @@ export default function Month({ currentDay }) {
 
         const days = [...Array(calendar.info[month - 1].daysOfMonth).keys()]
         const startsOn = calendar.info[month - 1].startsOn + 1
-        const isCurrentDate = calendar.selectedYear === calendar.currentYear
+        const isCurrentMonth = calendar.selectedYear === calendar.currentYear
             && calendar.selectedMonth === calendar.currentMonth
 
         return days.map(day => {
             const dayNumber = day + 1;
-
             return (
-                <Day currentDay={calendar.currentDay}
-                    dayNumber={dayNumber}
-                    isCurrentDate={isCurrentDate}
-                    isFirstDay={dayNumber === 1}
+                <Day dayNumber={dayNumber}
+                    isCurrentDate={isCurrentMonth && calendar.currentDay === dayNumber}
+                    isFirstOfTheMonth={dayNumber === 1}
                     key={day}
                     startsOn={startsOn}
                 />
