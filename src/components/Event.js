@@ -20,7 +20,7 @@ export default function Event({ handleClose, show }) {
                     </div>
                     <div>
                         <button className="action-button" onClick={handleClose}>Add</button>
-                        <button className="action-button" onClick={handleClose}>May be later</button>
+                        <button className="action-button" onClick={handleClose}>Maybe later</button>
                     </div>
                 </div>
             </section>
