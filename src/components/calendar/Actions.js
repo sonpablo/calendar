@@ -1,5 +1,6 @@
 import useCalendar from 'hooks/useCalendar'
 import React from 'react'
+import './Actions.css'
 
 export default function Actions() {
 
@@ -19,9 +20,9 @@ export default function Actions() {
 
     return (
         <section>
-            <button onClick={handelPreviousMonth}>Previous</button>
-            <button onClick={handelToDay}>To day</button>
-            <button onClick={handelNextMonth}>Next</button>
+            <button className='action-button' onClick={handelPreviousMonth}>◄</button>
+            <button className='action-button' onClick={handelToDay}>Today</button>
+            <button className='action-button' onClick={handelNextMonth}>►</button>
         </section>
     )
 }

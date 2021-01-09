@@ -25,7 +25,7 @@
   text-align: left;
 }
 
-.event-content button {
+.action-button {
   background-color: #fff;
   border: 2px solid #e7e7e7;
   color: #000000;
@@ -34,7 +34,7 @@
   margin-top: 1em;
   padding: 0.6em 0.8em;
 }
-.event-content button:hover {
+.action-button:hover {
   background-color: #e7e7e7;
 }
 

@@ -9,7 +9,7 @@ export default function Event({ handleClose, show }) {
         <div className={showHideClassName}>
             <section className='modal modal-main'>
                 <h4>Create event</h4>
-                <section className="event-content">
+                <div className="event-content">
                     <div>
                         <p>Name</p>
                         <input autofocus="autofocus" placeholder="René.." type="text" ></input>
@@ -18,8 +18,11 @@ export default function Event({ handleClose, show }) {
                         <p>Surname</p>
                         <input type="text" placeholder="Descartes.."></input>
                     </div>
-                    <button onClick={handleClose}>Click me!</button>
-                </section>
+                    <div>
+                        <button className="action-button" onClick={handleClose}>Add</button>
+                        <button className="action-button" onClick={handleClose}>May be later</button>
+                    </div>
+                </div>
             </section>
         </div>
     )

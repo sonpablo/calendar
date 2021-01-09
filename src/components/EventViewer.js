@@ -10,7 +10,8 @@ export default function EventViewer({ handleClose, show }) {
             <section className='modal modal-main'>
                 <h4>Date taked</h4>
                 <p>Clinton Barton</p>
-                <button onClick={handleClose}>Click me!</button>
+                <button className="action-button" onClick={handleClose}>Delete</button>
+                <button className="action-button" onClick={handleClose}>Close</button>
             </section>
         </div>
     )

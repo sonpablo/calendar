@@ -15,7 +15,7 @@ export default function Day({ dayNumber, isCurrentDate = false, isFirstOfTheMont
     const classNameFirstDay = isFirstOfTheMonth ? 'day-item first-day' : 'day-item'
 
     const classNameDayNumber = dayNumber && isCurrentDate
-        ? "day-number current-day"
+        ? "day-number current-day "
         : "day-number"
 
 
@@ -33,15 +33,22 @@ export default function Day({ dayNumber, isCurrentDate = false, isFirstOfTheMont
 
     return (
         <li className={classNameFirstDay} style={styleFirstDayStart}>
-            <p className={classNameDayNumber} onClick={handleEventCreate}>{dayNumber}</p>
+
+            <div className="header-section hover-to-show-action" onClick={handleEventCreate}>
+                <span className="hover-to-show">+</span>
+                <p className={classNameDayNumber} >{dayNumber}</p>
+            </div>
             <div className="days-events-container">
                 <p className="days-events" onClick={handleEventViewer}>
                     PR
                 </p>
-
+                <p className="days-events" onClick={handleEventViewer}>
+                    PR
+                </p>
             </div>
             {renderEvent}
             {renderEventViewer}
+
         </li>
     )
 }

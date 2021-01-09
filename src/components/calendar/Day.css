@@ -13,7 +13,6 @@
   margin: 0.2em;
   text-align: right;
 }
-
 .current-day {
   font-weight: bold;
   text-decoration: underline;
@@ -31,11 +30,35 @@
 }
 
 .days-events {
-  background-color: lightseagreen;
+  background-color: #ebebeb;
   border-radius: 20%;
   cursor: pointer;
+  color: #fa7f72;
   display: inline;
   font-size: 0.7em;
   margin: 0.2em;
   padding: 0.2em;
 }
+
+.days-events:hover {
+  background-color: #fa7f72;
+  color: #ebebeb;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.hover-to-show {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+.hover-to-show-action:hover .hover-to-show {
+  opacity: 1;
+  color: #fa7f72;
+  font-weight: bolder;
+  transition: all 0.2s ease-in-out;
+}
+
