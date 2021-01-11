@@ -1,14 +1,12 @@
-import EventViewer from 'components/EventViewer'
-import Event from 'components/Event'
-
+import Event from 'components/events/Event'
+import EventCreator from 'components/events/EventCreator'
 import React, { useState } from 'react'
 import './Day.css'
 
-export default function Day({ dayNumber, isCurrentDate = false, isFirstOfTheMonth = false, startsOn = 0 }) {
+
+export default function Day({ dayNumber, events = [], isCurrentDate = false, isFirstOfTheMonth = false, startsOn = 0 }) {
 
     const [createEvent, setCreateEvent] = useState(false)
-    const [showEvent, setShowEvent] = useState(false)
-
 
     const styleFirstDayStart = { "--first-day-start": startsOn }
 
@@ -23,13 +21,13 @@ export default function Day({ dayNumber, isCurrentDate = false, isFirstOfTheMont
         setCreateEvent(!createEvent)
     }
 
-    const handleEventViewer = () => {
-        setShowEvent(!showEvent)
-    }
+    const renderEventCreator = createEvent && <EventCreator handleClose={handleEventCreate} selectedDay={dayNumber} show={createEvent} />
 
-    const renderEvent = createEvent && <Event handleClose={handleEventCreate} show={createEvent} />
 
-    const renderEventViewer = showEvent && <EventViewer handleClose={handleEventViewer} show={showEvent} />
+    const renderDatedEvents = events.length > 0
+        && events.map((event, index) =>
+            <Event key={index} event={event} />
+        )
 
     return (
         <li className={classNameFirstDay} style={styleFirstDayStart}>
@@ -39,16 +37,9 @@ export default function Day({ dayNumber, isCurrentDate = false, isFirstOfTheMont
                 <p className={classNameDayNumber} >{dayNumber}</p>
             </div>
             <div className="days-events-container">
-                <p className="days-events" onClick={handleEventViewer}>
-                    PR
-                </p>
-                <p className="days-events" onClick={handleEventViewer}>
-                    PR
-                </p>
+                {renderDatedEvents}
             </div>
-            {renderEvent}
-            {renderEventViewer}
-
+            {renderEventCreator}
         </li>
     )
 }

@@ -15,11 +15,36 @@
 }
 .current-day {
   font-weight: bold;
-  text-decoration: underline;
+
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  padding: 0.2em;
 }
 
 .first-day {
   grid-column-start: var(--first-day-start, 0);
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.header-section:hover {
+  font-weight: bolder;
+}
+.hover-to-show {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-to-show-action:hover .hover-to-show {
+  opacity: 1;
+
+  color: #fa7f72;
+  font-weight: bolder;
+  transition: all 0.2s ease-in-out;
 }
 
 .days-events-container {
@@ -44,21 +69,3 @@
   background-color: #fa7f72;
   color: #ebebeb;
 }
-
-.header-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-.hover-to-show {
-  opacity: 0;
-  transition: all 0.2s ease-in-out;
-}
-.hover-to-show-action:hover .hover-to-show {
-  opacity: 1;
-  color: #fa7f72;
-  font-weight: bolder;
-  transition: all 0.2s ease-in-out;
-}
-
