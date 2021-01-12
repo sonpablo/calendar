@@ -3,7 +3,6 @@ import EventCreator from 'components/events/EventCreator'
 import React, { useState } from 'react'
 import './Day.css'
 
-
 export default function Day({ dayNumber, events = [], isCurrentDate = false, isFirstOfTheMonth = false, startsOn = 0 }) {
 
     const [createEvent, setCreateEvent] = useState(false)
@@ -16,13 +15,11 @@ export default function Day({ dayNumber, events = [], isCurrentDate = false, isF
         ? "day-number current-day "
         : "day-number"
 
-
     const handleEventCreate = () => {
         setCreateEvent(!createEvent)
     }
 
     const renderEventCreator = createEvent && <EventCreator handleClose={handleEventCreate} selectedDay={dayNumber} show={createEvent} />
-
 
     const renderDatedEvents = events.length > 0
         && events.map((event, index) =>

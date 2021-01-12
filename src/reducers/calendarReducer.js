@@ -2,7 +2,7 @@
 const currentDate = new Date();
 
 const dateCurrentYear = currentDate.getUTCFullYear()
-const dateCurrentMonthNumber = currentDate.getUTCMonth() + 1
+const dateCurrentMonthNumber = currentDate.getUTCMonth()
 const dateCurrentDayNumber = currentDate.getUTCDate()
 const locale = 'en'
 const intlForMonths = new Intl.DateTimeFormat(locale, { month: 'long' })
@@ -11,7 +11,7 @@ const months = [...Array(12).keys()]
 export const calendarReducer = (state, action) => {
     let month = state.selectedMonth
     let year = state.selectedYear
-    
+
     switch (action.type) {
         case 'INIT':
             return {
@@ -23,8 +23,8 @@ export const calendarReducer = (state, action) => {
                 selectedYear: dateCurrentYear
             }
         case 'NEXT_MONTH':
-            if (state.selectedMonth === 12) {
-                month = 1
+            if (state.selectedMonth === 11) {
+                month = 0
                 year = state.selectedYear + 1
             } else {
                 month = state.selectedMonth + 1
@@ -38,8 +38,8 @@ export const calendarReducer = (state, action) => {
                 selectedYear: year
             }
         case 'PREVIOUS_MONTH':
-            if (state.selectedMonth === 1) {
-                month = 12
+            if (state.selectedMonth === 0) {
+                month = 11
                 year = state.selectedYear - 1
             } else {
                 month = state.selectedMonth - 1

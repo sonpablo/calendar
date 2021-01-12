@@ -1,11 +1,19 @@
-import React, { useReducer } from 'react'
-import { calendarReducer } from 'reducers/calendarReducer'
+import React, { createContext, useEffect, useReducer } from 'react';
+import { eventsReducer } from 'reducers/eventsReducer';
 
-const Context = React.createContext({})
+const Context = createContext({})
 
 export function EventsContext({ children }) {
 
-    const [events, dispatch] = useReducer(calendarReducer, [])
+    const [events, dispatch] = useReducer(eventsReducer, [], () => {
+        const stored = localStorage.getItem('events');
+        return stored ? JSON.parse(stored)
+            : []
+    })
+
+    useEffect(() => {
+        localStorage.setItem('events', JSON.stringify(events))
+    }, [events])
 
     return (
         <Context.Provider value={{

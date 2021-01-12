@@ -1,11 +1,14 @@
 import Header from 'components/calendar/Header';
 import Month from 'components/calendar/Month';
+import { EventsContext } from 'context/EventsContext';
 import useCalendar from 'hooks/useCalendar';
 import React, { useEffect } from 'react';
-import './Calendar.css'
+import './Calendar.css';
 
 export default function Calendar() {
+
     const { dispatch } = useCalendar()
+
     useEffect(() => {
         dispatch({ type: 'INIT' })
     }, [])
@@ -13,7 +16,9 @@ export default function Calendar() {
     return (
         <section className="calendar-container">
             <Header />
-            <Month />
+            <EventsContext>
+                <Month />
+            </EventsContext>
         </section>
     );
 }

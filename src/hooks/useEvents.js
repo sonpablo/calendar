@@ -1,28 +1,14 @@
-import { useState, useEffect } from 'react'
-import useCalendar from 'hooks/useCalendar'
+import Context from 'context/EventsContext'
+import { useContext, useEffect, useState } from 'react'
 
-export default function useEvents() {
-    const { calendar } = useCalendar()
-    const [events, setEvents] = useState([])
-
-    let store = localStorage.getItem('events')
-        ? JSON.parse(localStorage.getItem('events'))
-        : []
+export default function useEvents(selectedMonth) {
+    const { events, dispatch } = useContext(Context)
+    const [eventsInMonth, setEventsInMonth] = useState([])
 
     useEffect(() => {
-        if (store.lentgh === 0) return
+        setEventsInMonth(events.filter(event => new Date(event.date).getMonth() === selectedMonth))
+    }, [events, selectedMonth])
 
-    
-        const date = new Date(calendar.selectedYear,
-            calendar.selectedMonth - 1,
-            1)
-        const eventsFiltered = store.filter(event => new Date(event.date).getYear() === date.getYear()
-            && new Date(event.date).getMonth() === date.getMonth())
 
-        setEvents(eventsFiltered)
-
-    }, [calendar])
-
-    return { events }
-
+    return { dispatch, eventsInMonth }
 }

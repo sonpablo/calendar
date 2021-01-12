@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import EventViewer from 'components/events/EventViewer'
+import EventViewer from 'components/events/EventViewer';
+import React, { useState } from 'react';
 import './EventViewer.css';
 
 export default function Event(event) {

@@ -1,11 +1,12 @@
 
 import useCalendar from 'hooks/useCalendar';
+import useEvents from 'hooks/useEvents';
 import React, { useState } from 'react';
 import './EventViewer.css';
 
-
 export default function EventCreator({ selectedDay = 0, handleClose, show }) {
     const { calendar } = useCalendar()
+    const { dispatch } = useEvents()
     const [name, setName] = useState(null)
     const [surname, setSurname] = useState(null)
 
@@ -15,29 +16,17 @@ export default function EventCreator({ selectedDay = 0, handleClose, show }) {
         event.preventDefault()
 
         if (name && surname) {
-
-            let store = localStorage.getItem('events')
-                ? JSON.parse(localStorage.getItem('events'))
-                : []
-
-            let newEvent = new Promise((resolve, reject) => {
-                let eventToStore = {
+            dispatch({
+                type: 'ADD_EVENT',
+                event: {
                     date: new Date(calendar.selectedYear,
-                        calendar.selectedMonth - 1,
+                        calendar.selectedMonth,
                         selectedDay),
                     name: name,
                     surname: surname
                 }
-
-                store.push(eventToStore)
-
-                localStorage.setItem('events', JSON.stringify(store))
-                resolve()
             })
-
-            newEvent.then(() => {
-                handleClose()
-            })
+            handleClose()
         }
     }
 

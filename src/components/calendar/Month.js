@@ -6,25 +6,26 @@ import React from 'react'
 import './Month.css'
 
 export default function Month({ currentDay }) {
+
     const { calendar } = useCalendar()
-    const { events } = useEvents()
+    const { eventsInMonth } = useEvents(calendar.selectedMonth)
 
     if (calendar.currentDay === 0) return <></>
 
     const getMonthDays = (month) => {
 
-        const days = [...Array(calendar.info[month - 1].daysOfMonth).keys()]
-        const startsOn = calendar.info[month - 1].startsOn + 1
+        const days = [...Array(calendar.info[month].daysOfMonth).keys()]
+        const startsOn = calendar.info[month].startsOn + 1
         const isCurrentMonth = calendar.selectedYear === calendar.currentYear
             && calendar.selectedMonth === calendar.currentMonth
 
         return days.map(day => {
             const dayNumber = day + 1;
             const date = new Date(calendar.selectedYear,
-                calendar.selectedMonth - 1,
+                calendar.selectedMonth,
                 dayNumber)
 
-            const eventsFiltered = events.filter(event => new Date(event.date).getDate() === date.getDate())
+            const eventsFiltered = eventsInMonth.filter(event => new Date(event.date).getDate() === date.getDate())
 
             return (
                 <Day dayNumber={dayNumber}

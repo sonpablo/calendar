@@ -6,7 +6,7 @@ import './Header.css';
 export default function Header() {
 
     const { calendar } = useCalendar()
-    const calendarInfo = calendar.info[calendar.selectedMonth - 1]
+    const calendarInfo = calendar.info[calendar.selectedMonth]
     const title = `${calendarInfo ? calendarInfo.monthName : ''} ${calendar.selectedYear}`
 
     return (
