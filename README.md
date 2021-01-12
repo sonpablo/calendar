@@ -8,9 +8,9 @@ This simple calendar allows you to create and manage Events on dates.
 
 ## I have used
 
-* Context api & * Reducer api to manage global state of calendar & events.
+* Context & Reducer api to manage global state of calendar & events.
 * Custom hooks
-* Intl js api to manage dates & days names
+* Intl js api to manage dates & days
 * uuid to manege unique identifiers
 * localStorage to store events data.
 
