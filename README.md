@@ -15,7 +15,7 @@ This simple calendar allows you to create and manage Events on dates.
 * localStorage to store events data.
 
 ## You can:
-* Navigate through the calendar & see events (if there are created). 
+* Navigate through the calendar & see events (if there are any).
 * Create & delete Events
 
 ## How to run

@@ -1,12 +1,14 @@
 import useEvents from 'hooks/useEvents'
-import React from 'react'
+import React, { useState } from 'react'
 import './EventViewer.css'
 
 export default function EventViewer({ event, handleClose, show }) {
 
     const { dispatch } = useEvents()
 
-    const showHideClassName = show ? 'modal display-block' : 'modal display-none'
+    const [showModal, setShowModal] = useState(show)
+
+    const showHideClassName = showModal ? 'modal display-block' : 'modal display-none'
 
     const handleDelete = (e) => {
         e.preventDefault()
@@ -14,6 +16,7 @@ export default function EventViewer({ event, handleClose, show }) {
             type: 'REMOVE_EVENT',
             id: event.id
         })
+        setShowModal(false)
     }
 
     return (
