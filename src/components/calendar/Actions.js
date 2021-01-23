@@ -1,6 +1,6 @@
+import Button from 'components/controls/Button'
 import useCalendar from 'hooks/useCalendar'
 import React from 'react'
-import './Actions.css'
 
 export default function Actions() {
 
@@ -20,9 +20,9 @@ export default function Actions() {
 
     return (
         <section>
-            <button className='action-button' onClick={handelPreviousMonth}>◄</button>
-            <button className='action-button' onClick={handelToDay}>Today</button>
-            <button className='action-button' onClick={handelNextMonth}>►</button>
+            <Button onClick={handelPreviousMonth} text={'◄'} />
+            <Button onClick={handelToDay} text={'Today'} />
+            <Button onClick={handelNextMonth} text={'►'} />
         </section>
     )
 }

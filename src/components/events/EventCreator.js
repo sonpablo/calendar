@@ -1,4 +1,5 @@
 
+import Button from 'components/controls/Button';
 import useCalendar from 'hooks/useCalendar';
 import useEvents from 'hooks/useEvents';
 import React, { useState } from 'react';
@@ -52,8 +53,8 @@ export default function EventCreator({ selectedDay = 0, handleClose, show }) {
                         <input type="text" onChange={handleSurnameChange} placeholder="Descartes.."></input>
                     </div>
                     <div>
-                        <button className="action-button" type="submit">Add</button>
-                        <button className="action-button" onClick={handleClose}>Maybe later</button>
+                        <Button type="submit" text={'Add'} />
+                        <Button onClick={handleClose} text={'Maybe later'} />
                     </div>
                 </form>
             </section>
